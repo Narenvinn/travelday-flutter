@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travelpay/Routes/router.dart';
 
 class NavDrawer extends StatelessWidget {
   const NavDrawer({super.key});
@@ -16,7 +17,7 @@ class NavDrawer extends StatelessWidget {
                     fit: BoxFit.fill,
                     image: AssetImage('assets/images/bg.jpg'))),
             child: Text(
-              'Side menu',
+              'Name',
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
           ),
@@ -43,7 +44,12 @@ class NavDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.exit_to_app),
             title: const Text('Logout'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {
+              Navigator.of(context).pushNamedAndRemoveUntil(LoginRoute,
+                  (route) {
+                return false;
+              })
+            },
           ),
         ],
       ),

@@ -22,14 +22,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
   CameraPosition? cameraPosition;
   LatLng startLocation = LatLng(27.6602292, 85.308027);
   String location = "Search Location";
+  late double devicewidth;
+  late double deviceheight;
   @override
   Widget build(BuildContext context) {
+    devicewidth = MediaQuery.of(context).size.width;
+    deviceheight = MediaQuery.of(context).size.height;
     return Scaffold(
         drawer: const NavDrawer(),
         appBar: AppBar(
           title: Image.asset(Constants.traveltoplogo, fit: BoxFit.cover),
           actions: <Widget>[
-            IconButton(icon: Icon(Icons.message), onPressed: () {}),
+            IconButton(icon: Icon(Icons.account_circle_outlined ), onPressed: () {}),
           ],
         ),
         body:
@@ -55,56 +59,90 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
 
           Positioned(
-            top: 140,
-            child: ElevatedButton(
-                child: const Text('showModalBottomSheet'),
-                onPressed: () {
-                  // when raised button is pressed
-                  // we display showModalBottomSheet
+            top: 150,
+            child: Padding(
+              padding: const EdgeInsets.all(25.0),
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.green, // background
+                    onPrimary: Colors.white,
+                    fixedSize: Size((devicewidth - 50), 40),
+                    padding:
+                        const EdgeInsets.only(left: 25.0, right: 25, top: 5),
+                    tapTargetSize:
+                        MaterialTapTargetSize.shrinkWrap, // foreground
+                  ),
+                  child: const Text('Bottom Sheet'),
+                  onPressed: () {
+                    // when raised button is pressed
+                    // we display showModalBottomSheet
 
-                  showModalBottomSheet(
-                    context: context,
-                    backgroundColor: Colors.transparent,
-                    builder: (context) {
-                      return Container(
-                        color: Colors.white,
-                        height: MediaQuery.of(context).size.height / 3,
-
-                        margin: const EdgeInsets.only(
-                            left: 25.0, right: 25, top: 5, bottom: 35),
-                        child: ListView.builder(
-                            itemCount: 5,
-                            itemBuilder: (BuildContext context, int index) {
-                              return ListTile(
-                                  leading: const Icon(Icons.list),
-                                  trailing: const Text(
-                                    "GFG",
-                                    style: TextStyle(
-                                        color: Colors.green, fontSize: 15),
-                                  ),
-                                  title: Text("List item $index"));
-                            }),
-                        // child: Wrap(
-                        //   children: const [
-                        //     ListTile(
-                        //       leading: Icon(Icons.share),
-                        //       title: Text('Share'),
-                        //     ),
-                        //     ListTile(
-                        //       leading: Icon(Icons.copy),
-                        //       title: Text('Copy Link'),
-                        //     ),
-                        //     ListTile(
-                        //       leading: Icon(Icons.edit),
-                        //       title: Text('Edit'),
-                        //     ),
-
-                        //   ],
-                        // ),
-                      );
-                    },
-                  );
-                }),
+                    showModalBottomSheet(
+                     
+                      context: context,
+                      backgroundColor: Colors.transparent,
+                      builder: (context) {
+                        return Container(
+                          
+                          color: Colors.white,
+                          height: MediaQuery.of(context).size.height / 3 + 60,
+                          padding: const EdgeInsets.only(top: 10, bottom: 10),
+                          margin: const EdgeInsets.only(
+                              left: 25.0, right: 25, top: 5, bottom: 35),
+                          child: ListView.builder(
+                              itemCount: 5,
+                              itemBuilder: (BuildContext context, int index) {
+                                return index == 4
+                                    ? Padding(
+                                      padding: const EdgeInsets.only(left :20.0,right: 20),
+                                      child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            primary: Colors.green, // background
+                                            onPrimary: Colors.white,
+                                            //fixedSize: const Size(150, 40),
+                                           // padding: const EdgeInsets.only(left: 25.0, right: 25, top: 5),
+                                            //tapTargetSize: MaterialTapTargetSize.shrinkWrap, // foreground
+                                          ),
+                                          onPressed: () {
+                                            //Navigator.pushNamed(context, DashboardRoute);
+                                          },
+                                          child: const Text(Constants.bottomsheet),
+                                    //)
+                                        ),
+                                    )
+                                    : ListTile(
+                                        leading: const Icon(
+                                          Icons.car_crash_sharp,
+                                          color: Colors.green,
+                                          size: 50,
+                                        ),
+                                        trailing: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: const <Widget>[
+                                            Icon(
+                                              Icons.info,
+                                              color: Colors.black,
+                                            ),
+                                            SizedBox(width: 15),
+                                            Text(
+                                              "₹ 2000 - ₹ 2562",
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 15),
+                                            ),
+                                          ],
+                                        ),
+                                        title: Text("List item $index"),
+                                        subtitle: Text("Sub List item $index"),
+                                      );
+                              }),
+                        );
+                      },
+                    );
+                  }),
+            ),
           ),
 
           //search autoconplete input

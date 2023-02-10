@@ -13,12 +13,7 @@ class Validator {
     return password.length > 5;
   }
 
-  static String externalorinternalValidation(String value) {
-    if (value.toLowerCase().contains('techmahindra.com')) {
-      return 'Internal';
-    }
-    return 'External';
-  }
+  
 
   static logoutAction(BuildContext context) {
     // SharedData.setLoggedIn(false);

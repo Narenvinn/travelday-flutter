@@ -5,7 +5,6 @@ import 'package:travelpay/Routes/router.dart';
 import 'package:travelpay/Utils/constants.dart';
 import 'package:travelpay/Utils/customfont.dart';
 
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -16,11 +15,9 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
- 
+
   double devicewidth = 0;
   double deviceheight = 0;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +39,6 @@ class _LoginScreenState extends State<LoginScreen> {
       SystemUiOverlay.bottom,
     ]);
   }
-  
 
   Widget loginForm() {
     return
@@ -70,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget boxFieldsLoad() {
-     devicewidth = MediaQuery.of(context).size.width;
+    devicewidth = MediaQuery.of(context).size.width;
     deviceheight = MediaQuery.of(context).size.height;
     return
         //  Positioned.fill(
@@ -163,23 +159,22 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget headerImage(String image) {
-     devicewidth = MediaQuery.of(context).size.width;
+    devicewidth = MediaQuery.of(context).size.width;
     deviceheight = MediaQuery.of(context).size.height;
     return Align(
       alignment: Alignment.topCenter,
-      child: Image.asset(image, fit: BoxFit.fill,
-      height: deviceheight/3,),
+      child: Image.asset(
+        image,
+        fit: BoxFit.fill,
+        height: deviceheight / 3,
+      ),
     );
   }
 
   Widget bottomImage(String image) {
-   
     return Align(
       alignment: Alignment.bottomCenter,
-      child: 
-      
-      Image.asset(image, fit: BoxFit.fill,
-      height: deviceheight/3),
+      child: Image.asset(image, fit: BoxFit.fill, height: deviceheight / 3),
     );
   }
 }

@@ -7,6 +7,7 @@ class Constants {
   static const String forgotpassword = "Forgot password?";
   static const String mobilenumber = "Mobile Number";
   static const String getotp = "Get OTP";
+  static const String bottomsheet = "Bottom Sheet";
 
   // Sharedpreferences keys
 

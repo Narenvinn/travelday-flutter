@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:travelpay/Routes/router.dart';
-import 'package:travelpay/Screens/dashboardscreen.dart';
-import 'package:travelpay/Screens/loginscreen.dart';
+import 'package:travelday/Routes/router.dart';
+import 'package:travelday/Screens/dashboardscreen.dart';
+import 'package:travelday/Screens/loginscreen.dart';
 
 
 

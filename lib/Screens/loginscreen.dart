@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:travelpay/Routes/router.dart';
-import 'package:travelpay/Utils/constants.dart';
-import 'package:travelpay/Utils/customfont.dart';
+import 'package:travelday/Routes/router.dart';
+import 'package:travelday/Utils/constants.dart';
+import 'package:travelday/Utils/customfont.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);

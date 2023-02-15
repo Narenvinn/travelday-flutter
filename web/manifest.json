@@ -1,6 +1,6 @@
 {
-    "name": "travelpay",
-    "short_name": "travelpay",
+    "name": "travelday",
+    "short_name": "travelday",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

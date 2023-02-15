@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travelpay/Routes/route_generator.dart';
-import 'package:travelpay/Routes/router.dart';
-import 'package:travelpay/Utils/constants.dart';
+import 'package:travelday/Routes/route_generator.dart';
+import 'package:travelday/Routes/router.dart';
+import 'package:travelday/Utils/constants.dart';
 
 void main() {
  // runApp(const MyApp());

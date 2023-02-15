@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travelpay/Routes/router.dart';
+import 'package:travelday/Routes/router.dart';
 
 
 class Validator {

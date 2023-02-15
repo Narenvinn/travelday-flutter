@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:travelpay/Routes/router.dart';
-import 'package:travelpay/Screens/navdrawer.dart';
-import 'package:travelpay/Utils/constants.dart';
+import 'package:travelday/Routes/router.dart';
+import 'package:travelday/Screens/navdrawer.dart';
+import 'package:travelday/Utils/constants.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);

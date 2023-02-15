@@ -37,9 +37,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
           children: [
             Image.asset(
               Constants.navlogo,
-              fit: BoxFit.fitWidth,
-              height: MediaQuery.of(context).size.height * 0.2,
-              width: MediaQuery.of(context).size.width * 0.2,
+              fit: BoxFit.contain,
+             // height: MediaQuery.of(context).size.height * 0.2,
+              //width: MediaQuery.of(context).size.width * 0.2,
+              height: 32,
             ),
           ]),
          //title: Image.asset(Constants.navlogo, fit: BoxFit.fill),

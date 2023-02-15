@@ -15,6 +15,19 @@ class Constants {
   static const String bg = 'images/bg.jpg';
   static const String traveltoplogo = 'images/travel.jpg';
   static const String travelbottomlogo = 'images/travel2.jpeg';
+  static const String loginlogo = 'images/login_logo.png';
+  static const String bottomtravellogo = 'images/bottom_img.png';
+  static const String endlocation = 'images/end_loc.png';
+  static const String startlocation = 'images/start_loc.png';
+  static const String carlogo = 'images/car.png';
+  static const String infologo  = 'images/info.png';
+  static const String navlogo = 'images/logo.png';
+  static const String menubar = 'images/bars.png';
+  static const String heartlogo = 'images/heart.png';
+  static const String phonelogo = 'images/phone.png';
+  static const String userslogo = 'images/users.png';
+  
+  //static const String travelbottomlogo = 'images/travel2.jpeg';
 
   // Validations
 

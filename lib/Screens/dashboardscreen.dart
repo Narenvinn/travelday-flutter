@@ -33,7 +33,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
         appBar: AppBar(
           title: Image.asset(Constants.traveltoplogo, fit: BoxFit.cover),
           actions: <Widget>[
-            IconButton(icon: Icon(Icons.account_circle_outlined ), onPressed: () {}),
+            IconButton(
+                icon: Icon(Icons.account_circle_outlined), onPressed: () {}),
           ],
         ),
         body:
@@ -78,12 +79,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     // we display showModalBottomSheet
 
                     showModalBottomSheet(
-                     
                       context: context,
                       backgroundColor: Colors.transparent,
                       builder: (context) {
                         return Container(
-                          
                           color: Colors.white,
                           height: MediaQuery.of(context).size.height / 3 + 60,
                           padding: const EdgeInsets.only(top: 10, bottom: 10),
@@ -94,27 +93,30 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               itemBuilder: (BuildContext context, int index) {
                                 return index == 4
                                     ? Padding(
-                                      padding: const EdgeInsets.only(left :20.0,right: 20),
-                                      child: ElevatedButton(
+                                        padding: const EdgeInsets.only(
+                                            left: 20.0, right: 20),
+                                        child: ElevatedButton(
                                           style: ElevatedButton.styleFrom(
                                             primary: Colors.green, // background
                                             onPrimary: Colors.white,
                                             //fixedSize: const Size(150, 40),
-                                           // padding: const EdgeInsets.only(left: 25.0, right: 25, top: 5),
+                                            // padding: const EdgeInsets.only(left: 25.0, right: 25, top: 5),
                                             //tapTargetSize: MaterialTapTargetSize.shrinkWrap, // foreground
                                           ),
                                           onPressed: () {
                                             //Navigator.pushNamed(context, DashboardRoute);
                                           },
-                                          child: const Text(Constants.bottomsheet),
-                                    //)
+                                          child:
+                                              const Text(Constants.bottomsheet),
+                                          //)
                                         ),
-                                    )
+                                      )
                                     : ListTile(
-                                        leading: const Icon(
-                                          Icons.car_crash_sharp,
-                                          color: Colors.green,
-                                          size: 50,
+                                        leading: Image.asset(
+                                          Constants.carlogo,
+                                          width: 49.0,
+                                          height: 27.0,
+                                          fit: BoxFit.fill,
                                         ),
                                         trailing: Row(
                                           mainAxisSize: MainAxisSize.min,
@@ -191,17 +193,29 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       child: Container(
                           padding: const EdgeInsets.all(0),
                           width: MediaQuery.of(context).size.width - 40,
-                          child: const ListTile(
-                            leading: Icon(
-                              Icons.location_on,
-                              color: Colors.green,
+                          child: ListTile(
+                            leading:
+                                // Icon(
+                                //   Icons.location_on,
+                                //   color: Colors.green,
+                                // ),
+                                Image.asset(
+                              Constants.startlocation,
+                              width: 15.0,
+                              height: 15.0,
+                              fit: BoxFit.fill,
                             ),
-                            title: Text(
+                            title: const Text(
                               'Chennai central Railway st.',
                               style:
                                   TextStyle(fontSize: 15, color: Colors.green),
                             ),
-                            trailing: Icon(Icons.heart_broken),
+                            trailing:Image.asset(
+                              Constants.heartlogo,
+                              width: 12.0,
+                              height: 10.0,
+                              fit: BoxFit.fill,
+                            ),
                             dense: true,
                           )),
                     ),
@@ -252,12 +266,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       child: Container(
                           padding: const EdgeInsets.all(0),
                           width: MediaQuery.of(context).size.width - 40,
-                          child: const ListTile(
-                            leading: Icon(
-                              Icons.location_on,
-                              color: Colors.red,
+                          child: ListTile(
+                            leading: Image.asset(
+                              Constants.endlocation,
+                              width: 15.0,
+                              height: 15.0,
+                              fit: BoxFit.fill,
                             ),
-                            title: Text(
+                            title: const Text(
                               'Gandhi Nagar, Redhills Thiruvallur.',
                               style:
                                   TextStyle(fontSize: 15, color: Colors.green),

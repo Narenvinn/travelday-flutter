@@ -64,6 +64,17 @@ flutter:
     - images/bg.jpg
     - images/travel.jpg
     - images/travel2.jpeg
+    - images/login_logo.png
+    - images/bars.png
+    - images/bottom_img.png
+    - images/car.png
+    - images/end_loc.png
+    - images/heart.png
+    - images/info.png
+    - images/logo.png
+    - images/phone.png
+    - images/start_loc.png
+    - images/users.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

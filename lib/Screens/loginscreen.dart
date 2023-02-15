@@ -41,19 +41,22 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget loginForm() {
-    return
-        //SingleChildScrollView(
-        // child:
-        Form(
-      key: _formKey,
-      child: Stack(
-          // crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            headerImage(Constants.traveltoplogo),
-            boxFieldsLoad(),
-            bottomImage(Constants.traveltoplogo),
-          ]),
-      // ),
+    return SingleChildScrollView(
+      child: Form(
+        key: _formKey,
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+              //verticalDirection: 
+            //Stack(
+            // crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              headerImage(Constants.loginlogo),
+              boxFieldsLoad(),
+              Expanded(child: bottomImage(Constants.bottomtravellogo)),
+            ]),
+      ),
     );
   }
 
@@ -66,32 +69,36 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget boxFieldsLoad() {
-    devicewidth = MediaQuery.of(context).size.width;
-    deviceheight = MediaQuery.of(context).size.height;
+    // devicewidth = MediaQuery.of(context).size.width;
+    //  deviceheight = MediaQuery.of(context).size.height;
     return
         //  Positioned.fill(
         //    child:
-        Align(
-            alignment: Alignment.center,
-            child: Container(
-                height: 156,
-                width: devicewidth,
-                child: Column(
-                  // crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: textfieldsLoad(Constants.mobilenumber),
-                    ),
-                    signinButton(),
-                    forgotpasswordButton(),
-                  ],
-                )));
+        // Align(
+        //  alignment: Alignment.center,
+        // child:
+        //Container(
+        // height: 156,
+        // width: devicewidth,
+        // child:
+        Column(
+      //  crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: textfieldsLoad(Constants.mobilenumber),
+        ),
+        getotpButton(),
+        forgotpasswordButton(),
+      ],
+      // )
+      // )
+    );
   }
 
   Widget textfieldsLoad(String title) {
     return Padding(
-      padding: const EdgeInsets.only(left: 15.0, right: 15),
+      padding: const EdgeInsets.only(left: 15.0, right: 15, top: 50),
       child: TextField(
         autofocus: false,
         style: const TextStyle(fontSize: 15.0, color: Colors.green),
@@ -122,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget signinButton() {
+  Widget getotpButton() {
     devicewidth = MediaQuery.of(context).size.width;
     deviceheight = MediaQuery.of(context).size.height;
     return
@@ -161,20 +168,34 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget headerImage(String image) {
     devicewidth = MediaQuery.of(context).size.width;
     deviceheight = MediaQuery.of(context).size.height;
-    return Align(
-      alignment: Alignment.topCenter,
-      child: Image.asset(
-        image,
-        fit: BoxFit.fill,
-        height: deviceheight / 3,
-      ),
+    return
+        //Align(
+        //alignment: Alignment.topCenter,
+        //child:
+        Image.asset(
+      image,
+      fit: BoxFit.fill,
+      width: double.infinity,
+      height: deviceheight / 3 + 40,
+      // ),
     );
   }
 
   Widget bottomImage(String image) {
-    return Align(
-      alignment: Alignment.bottomCenter,
-      child: Image.asset(image, fit: BoxFit.fill, height: deviceheight / 3),
-    );
+    return
+        //Align(
+        // alignment: Alignment.bottomCenter,
+        //child:
+        //Expanded(
+        //child:
+       // Align(
+            //alignment: FractionalOffset.bottomCenter,
+            //child:
+             Image.asset(image,
+                fit: BoxFit.fill, 
+                //height: deviceheight / 3 - 40
+                //)
+                );
+    // );
   }
 }

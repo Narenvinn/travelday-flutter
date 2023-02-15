@@ -22,11 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   toolbarHeight: 0,
-      // ),
       body: loginForm(),
-      //color:CustomColors.backgroundpurple.withOpacity(0.3),
     );
   }
 
@@ -48,12 +44,11 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
-            //verticalDirection:
-            //Stack(
-            // crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               headerImage(Constants.loginlogo),
-              boxFieldsLoad(),
+              Container(
+                margin: const EdgeInsets.only(top: 25),
+                child: boxFieldsLoad()),
               bottomImage(Constants.bottomtravellogo),
             ]),
       ),
@@ -69,20 +64,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget boxFieldsLoad() {
-    // devicewidth = MediaQuery.of(context).size.width;
-    //  deviceheight = MediaQuery.of(context).size.height;
     return
-        //  Positioned.fill(
-        //    child:
-        // Align(
-        //  alignment: Alignment.center,
-        // child:
-        //Container(
-        // height: 156,
-        // width: devicewidth,
-        // child:
         Column(
-      //  crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Padding(
           padding: const EdgeInsets.all(10.0),
@@ -91,8 +74,6 @@ class _LoginScreenState extends State<LoginScreen> {
         getotpButton(),
         forgotpasswordButton(),
       ],
-      // )
-      // )
     );
   }
 
@@ -138,9 +119,6 @@ class _LoginScreenState extends State<LoginScreen> {
     devicewidth = MediaQuery.of(context).size.width;
     deviceheight = MediaQuery.of(context).size.height;
     return
-        // Padding(
-        //       padding: const EdgeInsets.only(left: 25.0, right: 25,top: 5),
-        // child:
         ElevatedButton(
       style: ElevatedButton.styleFrom(
         primary: CustomColors.buttonThemeColor, // background
@@ -153,7 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
         Navigator.pushNamed(context, DashboardRoute);
       },
       child: const Text(Constants.getotp),
-//)
+
     );
   }
 
@@ -174,34 +152,25 @@ class _LoginScreenState extends State<LoginScreen> {
     devicewidth = MediaQuery.of(context).size.width;
     deviceheight = MediaQuery.of(context).size.height;
     return
-        //Align(
-        //alignment: Alignment.topCenter,
-        //child:
         Image.asset(
       image,
       fit: BoxFit.fill,
       width: double.infinity,
       height: deviceheight / 3 + 40,
-      // ),
+    
     );
   }
 
   Widget bottomImage(String image) {
     return
-        //Align(
-        // alignment: Alignment.bottomCenter,
-        //child:
-        //Expanded(
-        //child:
-        // Align(
-        //alignment: FractionalOffset.bottomCenter,
-        //child:
-        Image.asset(
-      image,
-      fit: BoxFit.fill,
-      //height: deviceheight / 3 - 40
-      //)
-    );
-    // );
+       Container(
+          margin: EdgeInsets.only(top: deviceheight * 0.1),
+          child: Image.asset(
+              image,
+              fit: BoxFit.fill,
+             
+            ),
+        );
+  
   }
 }

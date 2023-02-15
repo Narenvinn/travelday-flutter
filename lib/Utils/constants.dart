@@ -8,6 +8,7 @@ class Constants {
   static const String mobilenumber = "Mobile Number";
   static const String getotp = "Get OTP";
   static const String bottomsheet = "Bottom Sheet";
+  static const String booknow = "Book Now";
 
   // Sharedpreferences keys
 

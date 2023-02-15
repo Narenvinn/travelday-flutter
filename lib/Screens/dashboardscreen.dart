@@ -32,16 +32,32 @@ class _DashboardScreenState extends State<DashboardScreen> {
         drawer: const NavDrawer(),
         appBar: AppBar(
           backgroundColor: CustomColors.buttonThemeColor,
-          title: Image.asset(Constants.navlogo, fit: BoxFit.fill),
+          title:Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Image.asset(
+              Constants.navlogo,
+              fit: BoxFit.fitWidth,
+              height: MediaQuery.of(context).size.height * 0.2,
+              width: MediaQuery.of(context).size.width * 0.2,
+            ),
+          ]),
+         //title: Image.asset(Constants.navlogo, fit: BoxFit.fill),
           actions: <Widget>[
-          Image.asset(
-      Constants.userslogo,
-      fit: BoxFit.fill,
-      //width: 5,
-     height: 5,
+            IconButton(
+        icon: Image.asset(Constants.userslogo,width: 14,height: 16,),
+        onPressed: () {
+
+        }),
+      
+    //       Image.asset(
+    //   Constants.userslogo,
+    //   fit: BoxFit.fill,
+    //   //width: 5,
+    //  height: 5,
       // ),
               // onPressed: () {}
-               ),
+               //),
           ],
         ),
         body:
@@ -101,7 +117,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 color: Colors.white,
                               ),
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
+                                  const BorderRadius.all(Radius.circular(20))),
                           child: ListView.builder(
                               itemCount: 5,
                               itemBuilder: (BuildContext context, int index) {
@@ -111,7 +127,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                             left: 20.0, right: 20),
                                         child: ElevatedButton(
                                           style: ElevatedButton.styleFrom(
-                                            primary: Colors.green, // background
+                                            primary: CustomColors.buttonThemeColor, // background
                                             onPrimary: Colors.white,
                                             //fixedSize: const Size(150, 40),
                                             // padding: const EdgeInsets.only(left: 25.0, right: 25, top: 5),
@@ -121,16 +137,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                             //Navigator.pushNamed(context, DashboardRoute);
                                           },
                                           child:
-                                              const Text(Constants.bottomsheet),
+                                              const Text(Constants.booknow),
                                           //)
                                         ),
                                       )
                                     : Column(
                                         children: [
                                           ListTile(
-                                            leading: Image.asset(
+                                            leading: 
+                                            Image.asset(
                                               Constants.carlogo,
-                                              fit: BoxFit.fill,
+                                              fit: BoxFit.cover,
                                               width: 49,
                                               height: 27,
                                               // ),
@@ -147,8 +164,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                   height: 28,
                                                   // ),
                                                 ),
-                                                SizedBox(width: 15),
-                                                Text(
+                                               const SizedBox(width: 15),
+                                                const Text(
                                                   "₹ 2000 - ₹ 2562",
                                                   style: TextStyle(
                                                       color: Colors.black,

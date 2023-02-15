@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travelday/Routes/router.dart';
+import 'package:travelday/Utils/constants.dart';
 
 class NavDrawer extends StatelessWidget {
   const NavDrawer({super.key});
@@ -12,10 +13,11 @@ class NavDrawer extends StatelessWidget {
         children: <Widget>[
           const DrawerHeader(
             decoration: BoxDecoration(
-                color: Colors.green,
-                image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage('assets/images/bg.jpg'))),
+                color: CustomColors.buttonThemeColor,
+                // image: DecorationImage(
+                //     fit: BoxFit.fill,
+                //     image: AssetImage('assets/images/bg.jpg'))
+                    ),
             child: Text(
               'Name',
               style: TextStyle(color: Colors.white, fontSize: 25),

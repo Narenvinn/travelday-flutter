@@ -31,10 +31,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
         drawer: const NavDrawer(),
         appBar: AppBar(
-          title: Image.asset(Constants.traveltoplogo, fit: BoxFit.cover),
+          backgroundColor: CustomColors.buttonThemeColor,
+          title: Image.asset(Constants.navlogo, fit: BoxFit.fill),
           actions: <Widget>[
-            IconButton(
-                icon: Icon(Icons.account_circle_outlined), onPressed: () {}),
+          Image.asset(
+      Constants.userslogo,
+      fit: BoxFit.fill,
+      //width: 5,
+     height: 5,
+      // ),
+              // onPressed: () {}
+               ),
           ],
         ),
         body:
@@ -65,7 +72,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               padding: const EdgeInsets.all(25.0),
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.green, // background
+                    primary: CustomColors.buttonThemeColor, // background
                     onPrimary: Colors.white,
                     fixedSize: Size((devicewidth - 50), 40),
                     padding:
@@ -83,11 +90,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       backgroundColor: Colors.transparent,
                       builder: (context) {
                         return Container(
-                          color: Colors.white,
+                          // color: Colors.white,
                           height: MediaQuery.of(context).size.height / 3 + 60,
                           padding: const EdgeInsets.only(top: 10, bottom: 10),
                           margin: const EdgeInsets.only(
                               left: 25.0, right: 25, top: 5, bottom: 35),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                color: Colors.white,
+                              ),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
                           child: ListView.builder(
                               itemCount: 5,
                               itemBuilder: (BuildContext context, int index) {
@@ -111,33 +125,43 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                           //)
                                         ),
                                       )
-                                    : ListTile(
-                                        leading: Image.asset(
-                                          Constants.carlogo,
-                                          width: 49.0,
-                                          height: 27.0,
-                                          fit: BoxFit.fill,
-                                        ),
-                                        trailing: Row(
-                                          mainAxisSize: MainAxisSize.min,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
-                                          children: const <Widget>[
-                                            Icon(
-                                              Icons.info,
-                                              color: Colors.black,
+                                    : Column(
+                                        children: [
+                                          ListTile(
+                                            leading: Image.asset(
+                                              Constants.carlogo,
+                                              fit: BoxFit.fill,
+                                              width: 49,
+                                              height: 27,
+                                              // ),
                                             ),
-                                            SizedBox(width: 15),
-                                            Text(
-                                              "₹ 2000 - ₹ 2562",
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 15),
+                                            trailing: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              children: <Widget>[
+                                                Image.asset(
+                                                  Constants.infologo,
+                                                  fit: BoxFit.fill,
+                                                  width: 28,
+                                                  height: 28,
+                                                  // ),
+                                                ),
+                                                SizedBox(width: 15),
+                                                Text(
+                                                  "₹ 2000 - ₹ 2562",
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 15),
+                                                ),
+                                              ],
                                             ),
-                                          ],
-                                        ),
-                                        title: Text("List item $index"),
-                                        subtitle: Text("Sub List item $index"),
+                                            title: Text("List item $index"),
+                                            subtitle:
+                                                Text("Sub List item $index"),
+                                          ),
+                                          Divider()
+                                        ],
                                       );
                               }),
                         );
@@ -207,10 +231,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             ),
                             title: const Text(
                               'Chennai central Railway st.',
-                              style:
-                                  TextStyle(fontSize: 15, color: Colors.green),
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  color: CustomColors.buttonThemeColor),
                             ),
-                            trailing:Image.asset(
+                            trailing: Image.asset(
                               Constants.heartlogo,
                               width: 12.0,
                               height: 10.0,
@@ -275,10 +300,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             ),
                             title: const Text(
                               'Gandhi Nagar, Redhills Thiruvallur.',
-                              style:
-                                  TextStyle(fontSize: 15, color: Colors.green),
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  color: CustomColors.buttonThemeColor),
                             ),
-                            trailing: Icon(Icons.heart_broken),
+                            trailing: Image.asset(
+                              Constants.heartlogo,
+                              fit: BoxFit.fill,
+                              width: 12,
+                              height: 10,
+                              // ),
+                            ),
                             dense: true,
                           )),
                     ),

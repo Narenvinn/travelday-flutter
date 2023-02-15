@@ -48,13 +48,13 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
-              //verticalDirection: 
+            //verticalDirection:
             //Stack(
             // crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               headerImage(Constants.loginlogo),
               boxFieldsLoad(),
-              Expanded(child: bottomImage(Constants.bottomtravellogo)),
+              bottomImage(Constants.bottomtravellogo),
             ]),
       ),
     );
@@ -101,11 +101,12 @@ class _LoginScreenState extends State<LoginScreen> {
       padding: const EdgeInsets.only(left: 15.0, right: 15, top: 50),
       child: TextField(
         autofocus: false,
-        style: const TextStyle(fontSize: 15.0, color: Colors.green),
+        style: const TextStyle(
+            fontSize: 15.0, color: CustomColors.buttonThemeColor),
         decoration: InputDecoration(
           border: InputBorder.none,
           filled: true,
-          fillColor: Colors.grey.withOpacity(0.3),
+          fillColor: CustomColors.textfieldBackgroundThemeColor,
           hintText: title,
           contentPadding:
               const EdgeInsets.only(left: 14.0, bottom: 8.0, top: 8.0),
@@ -115,14 +116,18 @@ class _LoginScreenState extends State<LoginScreen> {
             borderRadius: BorderRadius.circular(10),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.green, width: 1),
+            borderSide: const BorderSide(
+                color: CustomColors.buttonThemeColor, width: 1),
             borderRadius: BorderRadius.circular(10),
           ),
           prefixIcon: IconButton(
               onPressed: () {},
-              icon: const Icon(
-                Icons.mobile_screen_share,
-                color: Colors.green,
+              icon: Image.asset(
+                Constants.phonelogo,
+                fit: BoxFit.fill,
+                width: 14,
+                height: 22,
+                // ),
               )),
         ),
       ),
@@ -138,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
         // child:
         ElevatedButton(
       style: ElevatedButton.styleFrom(
-        primary: Colors.green, // background
+        primary: CustomColors.buttonThemeColor, // background
         onPrimary: Colors.white,
         fixedSize: Size((devicewidth - 50), 40),
         padding: const EdgeInsets.only(left: 25.0, right: 25, top: 5),
@@ -156,11 +161,11 @@ class _LoginScreenState extends State<LoginScreen> {
     return TextButton(
       onPressed: () {},
       style: TextButton.styleFrom(
-        foregroundColor: Colors.green,
+        foregroundColor: CustomColors.buttonThemeColor,
       ),
       child: const Text(
         Constants.forgotpassword,
-        style: TextStyle(fontSize: 15),
+        style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -188,14 +193,15 @@ class _LoginScreenState extends State<LoginScreen> {
         //child:
         //Expanded(
         //child:
-       // Align(
-            //alignment: FractionalOffset.bottomCenter,
-            //child:
-             Image.asset(image,
-                fit: BoxFit.fill, 
-                //height: deviceheight / 3 - 40
-                //)
-                );
+        // Align(
+        //alignment: FractionalOffset.bottomCenter,
+        //child:
+        Image.asset(
+      image,
+      fit: BoxFit.fill,
+      //height: deviceheight / 3 - 40
+      //)
+    );
     // );
   }
 }

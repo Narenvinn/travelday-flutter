@@ -39,5 +39,6 @@ class Constants {
 // "mongodb+srv://Narendra:Baswa513@cluster0.u8lwk.mongodb.net/users?retryWrites=true&w=majority";
 
 class CustomColors {
-  static const Color backgroundpurple = Color(0xFFBFB4F8);
+  static const Color buttonThemeColor = Color(0xFF163A44);
+  static const Color textfieldBackgroundThemeColor = Color(0xFFEBEBEB);
 }

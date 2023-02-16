@@ -267,7 +267,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   void modelSheetDisplay() {
     // when raised button is pressed
     // we display showModalBottomSheet
- devicewidth = MediaQuery.of(context).size.width;
+    devicewidth = MediaQuery.of(context).size.width;
     deviceheight = MediaQuery.of(context).size.height;
     showModalBottomSheet(
       context: context,
@@ -285,77 +285,80 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   color: Colors.white,
                 ),
                 borderRadius: const BorderRadius.all(Radius.circular(20))),
-            child:
-                Column(children: [
-             
-                Expanded(
-                  child: ListView.builder(
-                      itemCount: 4,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Column(
-                          children: [
-                            ListTile(
-                                tileColor: _listSelectedItem[index]
-                                    ? CustomColors.textfieldBackgroundThemeColor
-                                    : Colors.white,
-                                leading: Image.asset(
-                                  Constants.carlogo,
-                                  fit: BoxFit.cover,
-                                  width: 49,
-                                  height: 27,
+            child: Column(children: [
+              //Expanded(
+              // child:
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 3 - 10,
+                child: ListView.builder(
+                    //shrinkWrap: true,
+                    itemCount: 4,
+                    itemBuilder: (BuildContext context, int index) {
+                      return 
+                      //Column(
+                        //children: [
+                          ListTile(
+                              tileColor: _listSelectedItem[index]
+                                  ? CustomColors.textfieldBackgroundThemeColor
+                                  : Colors.white,
+                              leading: Image.asset(
+                                Constants.carlogo,
+                                fit: BoxFit.cover,
+                                width: 49,
+                                height: 27,
+                              ),
+                              trailing: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: <Widget>[
+                                  Image.asset(
+                                    Constants.infologo,
+                                    fit: BoxFit.fill,
+                                    width: 28,
+                                    height: 28,
                                   ),
-                              
-                                trailing: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                  children: <Widget>[
-                                    Image.asset(
-                                      Constants.infologo,
-                                      fit: BoxFit.fill,
-                                      width: 28,
-                                      height: 28,
-                                      ),
-                                   
-                                    const SizedBox(width: 15),
-                                    const Text(
-                                      "₹ 2000 - ₹ 2562",
-                                      style: TextStyle(
-                                          color: Colors.black, fontSize: 15),
-                                    ),
-                                  ],
-                                ),
-                                title: Text("List item $index"),
-                                subtitle: Text("Sub List item $index"),
-                                onTap: () {
-                                  print('listontap $index');
-                                  _listSelectedItem[index] =
-                                      !_listSelectedItem[index];
-                                  setState(() {});
-                                }),
-                            Divider()
-                          ],
-                        );
-                      }),
-                
+                                  const SizedBox(width: 15),
+                                  const Text(
+                                    "₹ 2000 - ₹ 2562",
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 15),
+                                  ),
+                                ],
+                              ),
+                              title: Text("List item $index"),
+                              subtitle: Text("Sub List item $index"),
+                              onTap: () {
+                                print('listontap $index');
+                                _listSelectedItem[index] =
+                                    !_listSelectedItem[index];
+                                setState(() {});
+                              });
+                          // Divider()
+                       // ],
+                    //  );
+                    }),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0, right: 20),
-               child: 
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: CustomColors.buttonThemeColor, // background
-                    onPrimary: Colors.white,
-                    fixedSize:  Size((devicewidth - 70), 40),
-                    padding: const EdgeInsets.only(left: 25.0, right: 25, top: 5),
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap, // foreground
-                  ),
-                  onPressed: () {
-                    //Navigator.pushNamed(context, DashboardRoute);
-                  },
-                  child: const Text(Constants.booknow),
-                  )
-                //),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              // ),
+
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: CustomColors.buttonThemeColor, // background
+                  onPrimary: Colors.white,
+                  fixedSize: Size((devicewidth - 70), 40),
+                  padding: const EdgeInsets.only(
+                      left: 25.0, right: 25, top: 5, bottom: 10),
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap, // foreground
+                ),
+                onPressed: () {
+                  //Navigator.pushNamed(context, DashboardRoute);
+                },
+                child: const Text(Constants.booknow),
               )
+              //),
             ]));
       },
     );

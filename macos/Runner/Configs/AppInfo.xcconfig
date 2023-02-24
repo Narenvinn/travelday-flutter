@@ -8,7 +8,7 @@
 PRODUCT_NAME = travelday
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.travelday
+PRODUCT_BUNDLE_IDENTIFIER = com.travel.devtravelday
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2023 com.example. All rights reserved.

@@ -1,10 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:travelday/Routes/route_generator.dart';
 import 'package:travelday/Routes/router.dart';
 import 'package:travelday/Utils/constants.dart';
 
-void main() {
+Future<void> main() async {
  // runApp(const MyApp());
+ WidgetsFlutterBinding.ensureInitialized();
+ await Firebase.initializeApp();
+ FirebaseDatabase.instance.setPersistenceEnabled(true);
   runApp((MaterialApp(theme: ThemeData(
     fontFamily: Constants.customFontFamily,
     primarySwatch: Colors.green,

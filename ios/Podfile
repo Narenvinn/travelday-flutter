@@ -30,6 +30,9 @@ flutter_ios_podfile_setup
 target 'Runner' do
   use_frameworks!
   pod 'GoogleMaps'
+  pod 'Firebase', '>= 2.5.1'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
   use_modular_headers!
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))

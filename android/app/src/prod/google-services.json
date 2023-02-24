@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "65290509746",
+    "project_id": "travelday-prod",
+    "storage_bucket": "travelday-prod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65290509746:android:3f373187a0e855192798ab",
+        "android_client_info": {
+          "package_name": "com.travel.prodtravelday"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65290509746-7g9cpm5gcdf8kcfo9c9na4eia868qf6n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9V8PUfx4lmYlWvEU3UERNcCizgrLA1wE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65290509746-7g9cpm5gcdf8kcfo9c9na4eia868qf6n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "65290509746-d4b1r9gdm934sluodnmaekk5eciei0qa.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.travel.devtravelday"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
